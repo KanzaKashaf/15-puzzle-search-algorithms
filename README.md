@@ -1,116 +1,88 @@
-# 15 Puzzle Solver
 
-An AI-based solver for the classic **15-Puzzle Game** using both **uninformed** (BFS, DFS) and **informed** (A* with Manhattan Distance & Misplaced Tiles heuristic) search algorithms. Implemented in Python with object-oriented design and clear modular structure.
+# 15 Puzzle Game Solver
+
+An Artificial Intelligence-based solver for the classic 15 Puzzle Game, utilizing both **uninformed** and **informed search algorithms**. The goal of the game is to arrange tiles in ascending order with minimal moves by sliding them into an empty space.
 
 ---
 
 ## Project Overview
 
-This project is a part of the *Artificial Intelligence* course at **National Textile University, Faisalabad**, demonstrating various search techniques applied to a classic combinatorial problem: the 15-puzzle.
-
-The puzzle consists of a 4x4 grid of numbered tiles (1–15) and one empty space. The objective is to slide the tiles into the correct order using valid moves.
+This project demonstrates the application of search strategies from AI to solve the 15 Puzzle Game. It was developed as a group assignment for the **Artificial Intelligence** course at **National Textile University, Faisalabad**.
 
 ---
 
 ## Group Members
 
-- *Muhammad Hassaan Raza*  
-- *Kanza Kashaf*
+- **Hassaan Raza**  
+- **Kanza Kashaf**  
+- **Subaina Norab**  
 
 ---
 
-## Algorithms Implemented
+## Game Objective
+
+Arrange the tiles in **ascending order** from 1 to 15 by sliding tiles into the empty space.
+
+---
+
+## Search Strategies Used
 
 ### Uninformed Search
 
-- **Breadth-First Search (BFS)**  
-  Explores all nodes at the current depth before moving deeper. Ensures the shortest solution path. Uses a FIFO Queue.
+These strategies explore the state space **without domain-specific knowledge**.
 
-- **Depth-First Search (DFS)**  
-  Explores as deep as possible down one path before backtracking. May not find optimal solutions. Uses a LIFO Stack.
+#### Breadth-First Search (BFS)
+- Explores all nodes at the current depth before moving to the next level.
+- Uses a **queue**.
+- Guarantees optimal solution but may be slow for large depths.
+
+#### Depth-First Search (DFS)
+- Explores as far down a branch as possible before backtracking.
+- Uses a **stack** (recursion or manually).
+- May find a solution quickly but not guaranteed to be optimal.
 
 ### Informed Search
 
-- **A\* Search Algorithm**  
-  Combines path cost and heuristic estimation to find optimal paths.
+These use **heuristics** to guide the search toward the goal more efficiently.
 
-  #### Heuristics Used:
-  - *Manhattan Distance*: Sum of tile distances from their goal positions.
-  - *Misplaced Tiles*: Counts tiles not in their correct position.
+#### A* Algorithm
+- Combines actual cost (`g(n)`) and heuristic cost (`h(n)`) to compute `f(n) = g(n) + h(n)`.
+- Uses a **priority queue** for node selection.
 
----
+##### Heuristic 1: **Tiles Out of Place**
+- Counts how many tiles are not in the correct position.
+- Simple but less informative than Manhattan Distance.
 
-## Features
-
-- Object-Oriented `Puzzle` class
-- Random solvable puzzle generator
-- Multiple search strategies with tracking
-- Optimal path finding and backtracking
-- Heuristic-based informed search
+##### Heuristic 2: **Manhattan Distance**
+- Sum of horizontal and vertical distances of each tile from its goal position.
+- More accurate and commonly used.
 
 ---
 
-## Technologies Used
+## Technologies
 
 - Python 3
-- Standard Libraries:
-  - `queue`
-  - `random`
-  - `PriorityQueue`
-- Jupyter Notebook
-
----
-
-## Sample Output
-
-```
-Initial State:
-[5, 1, 2, 3]
-[6, 0, 7, 4]
-[9, 10, 11, 8]
-[13, 14, 15, 12]
-
-Solution using A* (Manhattan Distance):
-→ D → R → U → ...
-
-Total steps: 36
-Time taken: 0.15s
-```
-
----
-
-## 📂Project Structure
-
-```
-15_Puzzle_Solver/
-├── 15_PUZZLE_GroupTask_final.ipynb       # Main Notebook
-├── README.md                             # Project Documentation
-```
+- Jupyter Notebook (`.ipynb`)
+- Standard libraries: `queue`, `heapq`, `copy`
 
 ---
 
 ## How to Run
 
-1. Open `15_PUZZLE_GroupTask_final.ipynb` in Jupyter Notebook.
-2. Run each section to test BFS, DFS, or A* with heuristics.
-3. Modify the initial state if desired.
+1. Open the Jupyter Notebook file:  
+   `15_PUZZLE_GroupTask_final.ipynb`
+
+2. Run each cell sequentially to:
+   - Initialize puzzle state
+   - Apply BFS/DFS/A* algorithm
+   - View step-by-step solution and performance metrics
 
 ---
 
-## Acknowledgments
+## Learning Outcomes
 
-- AI Coursework – NTU Faisalabad  
-- AIMA textbook for heuristic inspiration  
-- Python Docs and StackOverflow for optimization ideas
-
----
-
-## Contact
-
-- **Muhammad Hassaan Raza**  
-  hassaanxhk11@gmail.com | +92 320 0096255 | [GitHub](https://github.com/HassaanRazaX)
-
-- **Kanza Kashaf**  
-  kanzakashaf56@gmail.com | +92 324 0497445 | [GitHub](https://github.com/KanzaKashaf)
+- Understanding and implementing classical search algorithms.
+- Applying heuristic functions in problem-solving.
+- Visualizing and analyzing performance differences between strategies.
 
 ---
