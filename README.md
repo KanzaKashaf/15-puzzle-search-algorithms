@@ -14,8 +14,7 @@ This project demonstrates the application of search strategies from AI to solve 
 ## Group Members
 
 - **Hassaan Raza**  
-- **Kanza Kashaf**  
-- **Subaina Norab**  
+- **Kanza Kashaf** 
 
 ---
 
